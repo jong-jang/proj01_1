@@ -1,0 +1,27 @@
+/* root.css */
+/* guide */
+/* ------------------------------------------------ */
+:root {
+  /* color */
+--color-y:#ffc107;
+--color-white:#fff;
+--color-g1:#ddd;
+--color-g2:#ccc;
+--color-g3:#bbb;
+--color-g4:#777;
+--color-g5:#333;
+--color-black:#171717;
+--color-red:#ed1b2f;
+--color-green:#059200;
+  /* font-size */
+--font-size1:0.8rem;
+--font-size2:0.875rem;
+--font-size3:1.125rem;
+--font-size4:2.5rem;
+--font-size5:3rem;
+  /* font-style */
+--font-weight1:400;
+--font-weight2:500;
+--font-weight3:600;
+}
+/* -------------------------------------------- */

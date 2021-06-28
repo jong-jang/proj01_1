@@ -1,0 +1,25 @@
+/* main/a_common.css */
+
+#wrap {
+  width:100%; height:auto;
+}
+
+/* #headBox */
+#headBox {}
+
+/* #sideBox */
+#sideBox {
+  display:none;
+}
+
+/* #viewBox */
+#viewBox {}
+
+/* #bestmenuBox */
+#bestmenuBox {}
+
+/* #reviewBox */
+#reviewBox {}
+
+/* #footBox */
+#footBox {}
