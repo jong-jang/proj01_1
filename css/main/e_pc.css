@@ -151,16 +151,28 @@
 }
 /* #bestmenuBox */
 #bestmenuBox {
-  width:100%; height:auto;
+  width:100%; height:800px;
 }
 #bestmenuBox > h2 {
-  width:100%; height:auto;
+  width:90%; height:auto;
   border-bottom: solid 1px #171717;
-  font-size: var(--font-size4);
+  font-size: 24px;
+  line-height: 20px;
+  padding-bottom: 30px;
+  margin:auto;
 }
 
 /* #reviewBox */
-#reviewBox {}
+#reviewBox {
+  width:100%; height:600px;
+}
+#reviewBox > h2 {
+  width:90%; height:auto;
+  border-bottom: solid 1px #171717;
+  font-size: 24px;
+  padding-bottom: 30px;
+  margin:auto;
+}
 
 /* #footBox */
 #footBox {}
