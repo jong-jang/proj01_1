@@ -11,22 +11,22 @@ var evimgDataAll = [
   },
   {
     "link" : "http://naver.com",
-    "backi" : "../img/event2.png",
+    "backi" : "../img/event2.jpg",
     "name" : "evimg_02",
   },
   {
     "link" : "http://naver.com",
-    "backi" : "../img/event1.jpg",
+    "backi" : "../img/event3.jpg",
     "name" : "evimg_03",
   },
   {
     "link" : "http://naver.com",
-    "backi" : "../img/event2.png",
+    "backi" : "../img/event4.jpg",
     "name" : "evimg_04",
   },
   {
     "link" : "http://naver.com",
-    "backi" : "../img/event1.jpg",
+    "backi" : "../img/event5.jpg",
     "name" : "evimg_05",
   }
 ];
@@ -41,15 +41,16 @@ var bestmenuAll = [
   }
 ];
 // 변수
-var iDc = $('.indicator_box');
+var iDc = $('.indicator_box'); // 인디케이터
 var iUl = iDc.children('ul');
 
-var evI = $('.evimage_box');
+var evI = $('.evimage_box'); // 이벤트 이미지 박스
 var eUl = evI.children('ul');
 
-var bmUl = $('.bm_box');
+var bmUl = $('.bm_box'); // 추천 메뉴
+
 // 인디케이터 li 요소 생성
-var evLiFn = function(){
+var evLiFn = function(setData){
   var evLi = '<li><a href="#"></a></li>';
   iUl.append(evLi);
 };
@@ -62,15 +63,15 @@ var evimLiFn = function(setData){
   var evA = eUl.children('a');
   
   evA.attr('href', setData.link);
-  eUl.children('li').eq(-1).attr('class', setData.name);
+  eUl.children('li').eq(-1).attr('id', setData.name);
   eUl.children('li').eq(-1).css({backgroundImage : 'url(' + setData.backi + ')'});
 }
-
-// 추천메뉴 li 요소 생성
+// 추천 메뉴 li 요소 생성
 var bmLiFn = function(){
 
 };
 
+// 이벤트 생성자
 function EvimgCard(data){
   this.link = data.link;
   this.backi = data.backi;
@@ -78,7 +79,7 @@ function EvimgCard(data){
 }
 // -------------------------------------------------------------------
 
-// 이벤트 목록생성
+// 이벤트 생성
 var i = 0;
 var setCard;
 var evimgLen = evimgDataAll.length;
@@ -87,11 +88,114 @@ for(; i < evimgLen; i++){
   evimLiFn(setCard);
 };
 
-// indicator 생성
+// 인디케이터 생성
 var i = 0;
 for(; i<evimgLen; i++){
-  evLiFn();
+  setCard = new EvimgCard(evimgDataAll[i]);
+  evLiFn(setCard);
 };
+
+// 이벤트를 움직이기 변수
+var viewBox = $('#viewBox');
+var eveLi = eUl.children('li'); // 이벤트 li 생성 후 재선언
+var eveLiLen = eveLi.length; // eveLi의 길이 저장
+
+var indiLi = iUl.children('li'); // 인디케이터 li 생성 후
+indiLi.eq(0).addClass('act');
+var indiA = indiLi.children('a'); // li a
+
+var evbtn = $('.evbutton_box'); // 버튼 박스
+var evNextbtn = evbtn.children('.next_btn'); // 다음 버튼
+var evPrevbtn = evbtn.children('.prev_btn'); // 이전 버튼
+// 이벤트를 움직이기 함수
+var indiFn = function(n){
+  var indi = indiLi.eq(n);
+  indi.addClass('act'); // 누른것만 추가
+  indi.siblings().removeClass('act'); // 나머진 제거
+}
+// 애니메이션을 위한 박스 크기 설정
+eUl.css({width:(100*eveLiLen) + '%'}); // 100% * li의 갯수
+eveLi.css({width:(100/eveLiLen) + '%'}); // ul의 크기 / li의 갯수
+
+// 자연스러운 애니메이션을 위한 설정
+var liClone = eveLi.eq(-1).clone(); // 맨뒤 요소를 복사
+eUl.prepend(liClone); // 복사한 것을 ul앞쪽에 추가
+var neweveLi = eUl.children('li'); // 복사 후 새로 선언
+var neweveLiLen = neweveLi.length; // li 길이
+
+eUl.css({width:(100*neweveLiLen) + '%', left:-100 + '%' }); // ul길이 설정
+neweveLi.css({width:(100/neweveLiLen) + '%'}); // li길이 설정
+
+// 버튼 이벤트 지정
+var permission = true; // 버튼 활성화 변수
+var n=0; // 버튼 클릭 수
+
+// 이벤트 다음버튼 이벤트
+evNextbtn.on('click', function(e){
+  e.preventDefault();
+  if(permission){ 
+    permission = false; // 버튼 연속으로 못누르게 제한
+    n++; // 클릭 수 증가
+    if(n > eveLiLen-1){  // li요소의 길이를 넘어가면
+      n=0;
+      eUl.css({marginLeft:100 + '%'}); // 첫번째 페이지로 빠르게 전환
+    }
+    indiFn(n); // 인디케이터 함수 호출
+    eUl.animate({marginLeft:-(100*n) + '%'}, function(){
+      permission = true; // 애니메이션이 끝나면 버튼 활성화
+    });
+  }
+});
+// 이벤트 이전버튼 이벤트
+evPrevbtn.on('click', function(e){ 
+  e.preventDefault();
+  if(permission){
+    permission = false;
+    n--;
+    indiFn(n);
+    eUl.animate({marginLeft:-(100*n) + '%'}, function(){
+      if(n < 0){
+        n = eveLiLen-1;
+        eUl.css({marginLeft:-(100*n) + '%'});
+      }
+      permission = true;
+    });
+  }
+});
+// -------------------------- 여기 해결 필요 ------------------------------
+// 변수
+var autoMoveFn;
+// 자동 애니메이션 함수
+var goslideFn = function(){
+  autoMoveFn = setInterval(function(){
+    // n의 수치가 일정범위 내에서 처리되는것을 파악
+    n++;
+    if(n >= eveLiLen){
+      n=0;
+      eUl.css({marginLeft:100 + '%'}); // 첫번째 페이지로 빠르게 전환
+    }
+    eUl.stop().animate({marginLeft : (-100*n) + '%'});
+    indiFn(n);
+  }, 2000);
+}
+// 이벤트 마우스 올렸을 때 자동 애니메이션 멈춤
+viewBox.on('mouseenter', function(){
+  clearInterval(autoMoveFn);
+});
+viewBox.on('mouseleave', function(){
+  goslideFn();
+})
+goslideFn();
+// -------------------------- 여기 해결 필요 ------------------------------
+
+// 인디케이터 클릭 이벤트
+indiA.on('click', function(e){
+  e.preventDefault();
+  var t = $(this).parent().index();
+  eUl.stop().animate({marginLeft : (-100*t) + '%'});
+  indiLi.eq(t).addClass('act');
+  indiLi.eq(t).siblings().removeClass('act');
+});
 
 })(jQuery);
 

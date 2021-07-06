@@ -91,7 +91,7 @@
 }
 .indicator_box {
   position: absolute;
-  bottom:10px; left:50%; transform: translateX(-50%);
+  bottom:10px; left:50%; transform: translateX(-50%); z-index: 1;
   width:auto; height:auto;
   border-radius:30px;
   padding:20px; box-sizing: border-box;
@@ -105,19 +105,30 @@
 .indicator_box > ul > li {
   float:left;
   width:30px; height:30px;
-  border-radius: 50%;
-  margin-right:20px;
+  border-radius: 3rem;
   background-color: #fff;
+  margin-left:20px;
 }
-.indicator_box > ul > li:last-of-type {
-  margin-right:0;
+.indicator_box > ul > li.act {
+  width:100px;
+  background-color: var(--color-red);
+}
+.indicator_box > ul > li:first-of-type {
+  margin-left:0;
 }
 .indicator_box li > a {
   display: block;
-  width:inherit; height:inherit;
+  width:inherit; height: inherit;
+}
+.indicator_box li > a:hover {
+  box-shadow: 2px 2px var(--color-g3);
+}
+.indicator_box li > a:focus {
+  box-shadow: 2px 2px var(--color-g3);
 }
 .evbutton_box {
   position:absolute;
+  z-index: 1;
   width:100%; height:auto;
   top:50%; transform: translateY(-50%);
   padding:0 1.3rem; box-sizing: border-box;
@@ -133,10 +144,11 @@
 
 .evimage_box {
   width:100%; height:700px;
-  overflow: hidden;
 }
 .evimage_box > ul {
+  position: relative;
   width:500%; height:700px;
+  overflow: hidden;
 }
 .evimage_box > ul > li {
   float:left;
