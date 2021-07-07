@@ -38,7 +38,42 @@ var bestmenuAll = [
     "name" : "버거",
     "price" : "00원",
     "kcal" : "00kcal"
-  }
+  },
+  {
+    "link" : "http://naver.com",
+    "bestmenuI" : "../img/2.png",
+    "name" : "버거",
+    "price" : "00원",
+    "kcal" : "00kcal"
+  },
+  {
+    "link" : "http://naver.com",
+    "bestmenuI" : "../img/3.png",
+    "name" : "버거",
+    "price" : "00원",
+    "kcal" : "00kcal"
+  },
+  {
+    "link" : "http://naver.com",
+    "bestmenuI" : "../img/4.png",
+    "name" : "버거",
+    "price" : "00원",
+    "kcal" : "00kcal"
+  },
+  {
+    "link" : "http://naver.com",
+    "bestmenuI" : "../img/5.png",
+    "name" : "버거",
+    "price" : "00원",
+    "kcal" : "00kcal"
+  },
+  {
+    "link" : "http://naver.com",
+    "bestmenuI" : "../img/6.png",
+    "name" : "버거",
+    "price" : "00원",
+    "kcal" : "00kcal"
+  },
 ];
 // 변수
 var iDc = $('.indicator_box'); // 인디케이터
@@ -67,10 +102,18 @@ var evimLiFn = function(setData){
   eUl.children('li').eq(-1).css({backgroundImage : 'url(' + setData.backi + ')'});
 }
 // 추천 메뉴 li 요소 생성
-var bmLiFn = function(){
-
+var bmLiFn = function(setData){
+  var bmLi = '<li><dl><dt><a><span class="blind">메뉴 이름<span></a><div></div></dt><dd><p></p><p></p></dd></dl></li>';
+  bmUl.append(bmLi);
 };
-
+// 추천 메뉴 생성자
+function BmCard(data){
+  this.link = data.link;
+  this.bestmenuI = data.bestmenuI;
+  this.name = data.name;
+  this.price = data.price;
+  this.kcal = data.kcal;
+}
 // 이벤트 생성자
 function EvimgCard(data){
   this.link = data.link;
@@ -81,19 +124,27 @@ function EvimgCard(data){
 
 // 이벤트 생성
 var i = 0;
-var setCard;
+var evsetCard;
 var evimgLen = evimgDataAll.length;
 for(; i < evimgLen; i++){
-  setCard = new EvimgCard(evimgDataAll[i]);
-  evimLiFn(setCard);
+  evsetCard = new EvimgCard(evimgDataAll[i]);
+  evimLiFn(evsetCard);
 };
 
 // 인디케이터 생성
 var i = 0;
 for(; i<evimgLen; i++){
-  setCard = new EvimgCard(evimgDataAll[i]);
-  evLiFn(setCard);
+  evsetCard = new EvimgCard(evimgDataAll[i]);
+  evLiFn(evsetCard);
 };
+// 추천 메뉴 생성
+var i = 0;
+var bmsetCard;
+var bmLen = bestmenuAll.length;
+for(; i < bmLen; i++){
+  bmsetCard = new BmCard(bestmenuAll[i]);
+  evLiFn(bmsetCard)
+}
 
 // 이벤트를 움직이기 변수
 var viewBox = $('#viewBox');
@@ -107,7 +158,7 @@ var indiA = indiLi.children('a'); // li a
 var evbtn = $('.evbutton_box'); // 버튼 박스
 var evNextbtn = evbtn.children('.next_btn'); // 다음 버튼
 var evPrevbtn = evbtn.children('.prev_btn'); // 이전 버튼
-// 이벤트를 움직이기 함수
+// 인디케이터 반응 함수
 var indiFn = function(n){
   var indi = indiLi.eq(n);
   indi.addClass('act'); // 누른것만 추가
@@ -162,39 +213,36 @@ evPrevbtn.on('click', function(e){
     });
   }
 });
-// -------------------------- 여기 해결 필요 ------------------------------
 // 변수
 var autoMoveFn;
 // 자동 애니메이션 함수
 var goslideFn = function(){
   autoMoveFn = setInterval(function(){
     // n의 수치가 일정범위 내에서 처리되는것을 파악
-    n++;
-    if(n >= eveLiLen){
-      n=0;
-      eUl.css({marginLeft:100 + '%'}); // 첫번째 페이지로 빠르게 전환
-    }
-    eUl.stop().animate({marginLeft : (-100*n) + '%'});
-    indiFn(n);
+    evNextbtn.trigger('click');
   }, 2000);
-}
-// 이벤트 마우스 올렸을 때 자동 애니메이션 멈춤
-viewBox.on('mouseenter', function(){
+};
+var stopslideFn = function(){
   clearInterval(autoMoveFn);
+}
+// 마우스 올렸을 때 자동 애니메이션 멈춤
+viewBox.on('mouseenter', function(){
+  stopslideFn();
 });
+// 마우스 벗어나면 다시 자동 애니메이션
 viewBox.on('mouseleave', function(){
   goslideFn();
 })
+// 자동 애니메이션 실행
 goslideFn();
-// -------------------------- 여기 해결 필요 ------------------------------
 
 // 인디케이터 클릭 이벤트
 indiA.on('click', function(e){
   e.preventDefault();
   var t = $(this).parent().index();
   eUl.stop().animate({marginLeft : (-100*t) + '%'});
-  indiLi.eq(t).addClass('act');
-  indiLi.eq(t).siblings().removeClass('act');
+  indiFn(t);
+  n = t;
 });
 
 })(jQuery);
