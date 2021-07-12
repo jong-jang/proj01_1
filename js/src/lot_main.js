@@ -35,44 +35,44 @@ var bestmenuAll = [
   {
     "link" : "http://naver.com",
     "bestmenuI" : "../img/1.png",
-    "name" : "버거",
-    "price" : "00원",
-    "kcal" : "00kcal"
+    "name" : "핫크리스피 버거",
+    "price" : "4,900원",
+    "kcal" : "503kcal"
   },
   {
     "link" : "http://naver.com",
     "bestmenuI" : "../img/2.png",
-    "name" : "버거",
-    "price" : "00원",
-    "kcal" : "00kcal"
+    "name" : "불고기 버거",
+    "price" : "3,900원",
+    "kcal" : "442kcal"
   },
   {
     "link" : "http://naver.com",
     "bestmenuI" : "../img/3.png",
-    "name" : "버거",
-    "price" : "00원",
-    "kcal" : "00kcal"
+    "name" : "폴더버거 비프",
+    "price" : "5,800원",
+    "kcal" : "509kcal"
   },
   {
     "link" : "http://naver.com",
     "bestmenuI" : "../img/4.png",
-    "name" : "버거",
-    "price" : "00원",
-    "kcal" : "00kcal"
+    "name" : "모짜렐라 인 더 버거",
+    "price" : "6,200원",
+    "kcal" : "715kcal"
   },
   {
     "link" : "http://naver.com",
     "bestmenuI" : "../img/5.png",
-    "name" : "버거",
-    "price" : "00원",
-    "kcal" : "00kcal"
+    "name" : "1인 혼닭",
+    "price" : "10,000원",
+    "kcal" : "581kcal"
   },
   {
     "link" : "http://naver.com",
     "bestmenuI" : "../img/6.png",
-    "name" : "버거",
-    "price" : "00원",
-    "kcal" : "00kcal"
+    "name" : "치즈 No.5",
+    "price" : "4,900원",
+    "kcal" : "509kcal"
   },
 ];
 // 변수
@@ -85,7 +85,7 @@ var eUl = evI.children('ul');
 var bmUl = $('.bm_box'); // 추천 메뉴
 
 // 인디케이터 li 요소 생성
-var evLiFn = function(setData){
+var evLiFn = function(){
   var evLi = '<li><a href="#"></a></li>';
   iUl.append(evLi);
 };
@@ -103,8 +103,14 @@ var evimLiFn = function(setData){
 }
 // 추천 메뉴 li 요소 생성
 var bmLiFn = function(setData){
-  var bmLi = '<li><dl><dt><a><span class="blind">메뉴 이름<span></a><div></div></dt><dd><p></p><p></p></dd></dl></li>';
+  var bmLi = '<li><dl><dt><a><span class="blind">메뉴 이름<span></a><div></div></dt><dd><p></p><p></p><p></p></dd></dl></li>';
   bmUl.append(bmLi);
+
+  bmUl.children('li').eq(-1).find('dt').css({backgroundImage : 'url(' + setData.bestmenuI +')'});
+  bmUl.children('li').eq(-1).find('a').attr('href', setData.link);
+  bmUl.children('li').eq(-1).find('p').eq(0).text(setData.name);
+  bmUl.children('li').eq(-1).find('p').eq(1).text(setData.price);
+  bmUl.children('li').eq(-1).find('p').eq(2).text(setData.kcal);
 };
 // 추천 메뉴 생성자
 function BmCard(data){
@@ -134,8 +140,7 @@ for(; i < evimgLen; i++){
 // 인디케이터 생성
 var i = 0;
 for(; i<evimgLen; i++){
-  evsetCard = new EvimgCard(evimgDataAll[i]);
-  evLiFn(evsetCard);
+  evLiFn();
 };
 // 추천 메뉴 생성
 var i = 0;
@@ -143,7 +148,7 @@ var bmsetCard;
 var bmLen = bestmenuAll.length;
 for(; i < bmLen; i++){
   bmsetCard = new BmCard(bestmenuAll[i]);
-  evLiFn(bmsetCard)
+  bmLiFn(bmsetCard)
 }
 
 // 이벤트를 움직이기 변수
