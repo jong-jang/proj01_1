@@ -2,6 +2,7 @@
 
 #wrap {
   width:100%; height:auto;
+  font-family: 'Malgun Godhic';
 }
 
 /* #headBox */
@@ -19,7 +20,13 @@
 #bestmenuBox {}
 
 /* #reviewBox */
-#reviewBox {}
+#reviewBox {position:relative;}
+#reviewBox button {
+  position: absolute;
+  bottom:2%; left:0; right:0; margin:auto;
+  width:200px; height:50px;
+  background-color: var(--color-y);
+}
 
 /* #footBox */
 #footBox {}

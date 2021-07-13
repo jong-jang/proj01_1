@@ -1,10 +1,9 @@
-/* main/e_pc.css */
+/*  d_laptop.css */
 
-@media screen and (min-width:1600px) {
-  
+@media screen and (min-width:1280px) and (max-width:1599px) {
+
 #wrap {
-  width:100%; max-width:1920px;height:auto;
-  margin:auto;
+  width:100%; height:auto;
 }
 
 /* #headBox */
@@ -30,7 +29,7 @@
 #headBox > h1 {
   float:left;
   width:258px; height:50px;
-  margin-left: 20px;
+  margin-left:20px;
   background-image: url("../../img/logo.png");
   background-position: 0 0;
   background-repeat: no-repeat;
@@ -47,6 +46,7 @@
 .globalnavi_box {
   float:left;
   width:60%; height:auto;
+  
 }
 .globalnavi_box > li {
   float:left;
@@ -56,12 +56,12 @@
 }
 .usernavi_box {
   float:right;
-  width:30%; height:auto;
+  width:40%; height:auto;
 }
 .usernavi_box > li {
   position: relative;
   float:right;
-  width:24%; height:20px;
+  width:21%; height:20px;
 }
 .usernavi_box > li:nth-last-of-type(1) {
   padding-left: 15px; box-sizing: border-box;
@@ -95,7 +95,7 @@
 }
 .indicator_box {
   position: absolute;
-  bottom:10px; left:50%; transform: translateX(-50%); z-index: 1;
+  bottom:80px; left:50%; transform: translateX(-50%); z-index: 1;
   width:auto; height:auto;
   border-radius:30px;
   padding:20px; box-sizing: border-box;
@@ -161,7 +161,7 @@
   width:calc(100% / 5); height:inherit;
   background-repeat: no-repeat;
   background-position:50% 50%;
-  background-size: auto 100%;
+  background-size: auto 80%;
 }
 .evimage_box > ul > li > a {
   display: block;
@@ -180,18 +180,18 @@
   margin:auto;
 }
 #bestmenuBox ul {
-  width:80%; height:auto;
+  width:70%; height:auto;
   margin:auto;
   padding:40px; box-sizing: border-box;
 }
 #bestmenuBox ul li {
   float:left;
-  width:18.75vw; max-width: 360px; height:25vw; max-height:480px; 
-  margin-right: 140px; margin-bottom:80px;
+  width:23.4375vw; height:31.25vw; max-width:374px; max-height:499px;
+  margin-right: 15.625vw; margin-bottom:6.25vw;
   box-shadow: 3px 3px 3px rgba(255, 193, 7, 0.2),
   -3px -3px 3px rgba(255, 193, 240, 0.1);
 }
-#bestmenuBox ul li:nth-of-type(3n) {
+#bestmenuBox ul li:nth-of-type(2n) {
   margin-right: 0;
 }
 
@@ -202,7 +202,7 @@
 #bestmenuBox ul li dt {
   width:100%; height:70%;
 }
-#bestmenuBox ul li dt a{
+#bestmenuBox ul li dt a {
   display: block;
   width:100%; height:100%;
   background-position: 50% 50%;
@@ -241,14 +241,14 @@
   margin:auto;
 }
 .rr_box {
-  width:90%; height:auto;
+  width:100%; height:auto;
   margin:auto;
   padding:40px; box-sizing: border-box;
 }
 .rr_box li {
   float:left;
-  width:31.25vw; max-width: 600px; height: 9.375vw; max-height: 180px;
-  margin-right: 150px;
+  width:39.0625vw; height: 11.71875vw;
+  margin-right: 100px;
   margin-bottom: 80px;
 }
 .rr_box li:nth-of-type(2n) {

@@ -2,79 +2,24 @@
 
 (function($){
 // jQuery
-// 이벤트 이미지 데이터
-var evimgDataAll = [
-  {
-    "link" : "http://naver.com",
-    "backi" : "../img/event1.jpg",
-    "name" : "evimg_01",
-  },
-  {
-    "link" : "http://naver.com",
-    "backi" : "../img/event2.jpg",
-    "name" : "evimg_02",
-  },
-  {
-    "link" : "http://naver.com",
-    "backi" : "../img/event3.jpg",
-    "name" : "evimg_03",
-  },
-  {
-    "link" : "http://naver.com",
-    "backi" : "../img/event4.jpg",
-    "name" : "evimg_04",
-  },
-  {
-    "link" : "http://naver.com",
-    "backi" : "../img/event5.jpg",
-    "name" : "evimg_05",
-  }
+var myData = [];
+var dataLink = [
+    '../data/bestmenuData.json', // 추천 메뉴 데이터
+    '../data/evimgData.json',    // 이벤트 이미지 데이터
+    '../data/reviewData.json'    // 리뷰 데이터
 ];
-// 추천 메뉴 데이터
-var bestmenuAll = [
-  {
-    "link" : "http://naver.com",
-    "bestmenuI" : "../img/1.png",
-    "name" : "핫크리스피 버거",
-    "price" : "4,900원",
-    "kcal" : "503kcal"
-  },
-  {
-    "link" : "http://naver.com",
-    "bestmenuI" : "../img/2.png",
-    "name" : "불고기 버거",
-    "price" : "3,900원",
-    "kcal" : "442kcal"
-  },
-  {
-    "link" : "http://naver.com",
-    "bestmenuI" : "../img/3.png",
-    "name" : "폴더버거 비프",
-    "price" : "5,800원",
-    "kcal" : "509kcal"
-  },
-  {
-    "link" : "http://naver.com",
-    "bestmenuI" : "../img/4.png",
-    "name" : "모짜렐라 인 더 버거",
-    "price" : "6,200원",
-    "kcal" : "715kcal"
-  },
-  {
-    "link" : "http://naver.com",
-    "bestmenuI" : "../img/5.png",
-    "name" : "1인 혼닭",
-    "price" : "10,000원",
-    "kcal" : "581kcal"
-  },
-  {
-    "link" : "http://naver.com",
-    "bestmenuI" : "../img/6.png",
-    "name" : "치즈 No.5",
-    "price" : "4,900원",
-    "kcal" : "509kcal"
-  },
-];
+for(var i=0; i<dataLink.length; i+=1){
+  $.ajax({
+    url: dataLink[i],
+    context: document.body
+  }).done(function(data){
+    // console.log(data);
+    myData.push(data);
+  }); // ajax
+}
+
+setTimeout(function(){
+
 // 변수
 var iDc = $('.indicator_box'); // 인디케이터
 var iUl = iDc.children('ul');
@@ -83,6 +28,8 @@ var evI = $('.evimage_box'); // 이벤트 이미지 박스
 var eUl = evI.children('ul');
 
 var bmUl = $('.bm_box'); // 추천 메뉴
+
+var rvUl = $('.rr_box'); // 리뷰
 
 // 인디케이터 li 요소 생성
 var evLiFn = function(){
@@ -106,12 +53,24 @@ var bmLiFn = function(setData){
   var bmLi = '<li><dl><dt><a><span class="blind">메뉴 이름<span></a><div></div></dt><dd><p></p><p></p><p></p></dd></dl></li>';
   bmUl.append(bmLi);
 
-  bmUl.children('li').eq(-1).find('dt').css({backgroundImage : 'url(' + setData.bestmenuI +')'});
+  bmUl.children('li').eq(-1).find('dt').find('a').css({backgroundImage : 'url(' + setData.bestmenuI +')'});
   bmUl.children('li').eq(-1).find('a').attr('href', setData.link);
   bmUl.children('li').eq(-1).find('p').eq(0).text(setData.name);
   bmUl.children('li').eq(-1).find('p').eq(1).text(setData.price);
   bmUl.children('li').eq(-1).find('p').eq(2).text(setData.kcal);
 };
+// 리뷰 li 요소 생성
+var rvLiFn = function(setData){
+  var rvLi = '<li><dl><dt></dt><dd><p></p><p></p><p></p><p><i></i><i></i><i></i><i></i><i></i></p></dd><dl></li>';
+  rvUl.append(rvLi);
+
+  rvUl.children('li').eq(-1).find('dt').css({backgroundImage : 'url(' + setData.menuI + ')'});
+  rvUl.children('li').eq(-1).find('p').eq(0).text(setData.menuname);
+  rvUl.children('li').eq(-1).find('p').eq(1).text('(' + ' ' + setData.userid + ' - ' + setData.username + ' ' + ')');
+  rvUl.children('li').eq(-1).find('p').eq(2).text(setData.review);
+  rvUl.children('li').eq(-1).find('p').eq(-1).find('i').css({backgroundImage : 'url(' + setData.star + ')'});
+}
+
 // 추천 메뉴 생성자
 function BmCard(data){
   this.link = data.link;
@@ -126,14 +85,23 @@ function EvimgCard(data){
   this.backi = data.backi;
   this.name = data.name;
 }
+// 리뷰 생성자
+function RvCard(data){
+  this.menuI = data.menuI;
+  this.menuname = data.menuname;
+  this.userid = data.userid;
+  this.username = data.username;
+  this.review = data.review;
+  this.star   = data.star;
+}
 // -------------------------------------------------------------------
 
 // 이벤트 생성
 var i = 0;
 var evsetCard;
-var evimgLen = evimgDataAll.length;
+var evimgLen = myData[1].length;
 for(; i < evimgLen; i++){
-  evsetCard = new EvimgCard(evimgDataAll[i]);
+  evsetCard = new EvimgCard(myData[1][i]);
   evimLiFn(evsetCard);
 };
 
@@ -142,13 +110,23 @@ var i = 0;
 for(; i<evimgLen; i++){
   evLiFn();
 };
+
 // 추천 메뉴 생성
 var i = 0;
 var bmsetCard;
-var bmLen = bestmenuAll.length;
+var bmLen = myData[0].length;
 for(; i < bmLen; i++){
-  bmsetCard = new BmCard(bestmenuAll[i]);
+  bmsetCard = new BmCard(myData[0][i]);
   bmLiFn(bmsetCard)
+}
+
+// 리뷰 생성
+var i = 0;
+var rvsetCard;
+var rvLen = myData[2].length;
+for(; i < rvLen; i++){
+  rvsetCard = new RvCard(myData[2][i]);
+  rvLiFn(rvsetCard);
 }
 
 // 이벤트를 움직이기 변수
@@ -249,6 +227,8 @@ indiA.on('click', function(e){
   indiFn(t);
   n = t;
 });
+
+}, 300);
 
 })(jQuery);
 
