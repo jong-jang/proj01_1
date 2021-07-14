@@ -21,6 +21,9 @@ for(var i=0; i<dataLink.length; i+=1){
 setTimeout(function(){
 
 // 변수
+var hdB = $('#headBox'); // header
+var gnB = $('.globalnavi_box'); // 글로벌 네비 박스
+
 var iDc = $('.indicator_box'); // 인디케이터
 var iUl = iDc.children('ul');
 
@@ -39,10 +42,10 @@ var evLiFn = function(){
 
 // 이벤트 li 요소 생성
 var evimLiFn = function(setData){
-  var evimLi = '<li><a><span></span></a></li>';
+  var evimLi = '<li><a><span>자세히 보기</span></a></li>';
   eUl.append(evimLi);
   
-  var evA = eUl.children('a');
+  var evA = eUl.find('a');
   
   evA.attr('href', setData.link);
   eUl.children('li').eq(-1).attr('id', setData.name);
@@ -129,7 +132,7 @@ for(; i < rvLen; i++){
   rvLiFn(rvsetCard);
 }
 
-// 이벤트를 움직이기 변수
+// 이벤트 변수
 var viewBox = $('#viewBox');
 var eveLi = eUl.children('li'); // 이벤트 li 생성 후 재선언
 var eveLiLen = eveLi.length; // eveLi의 길이 저장
@@ -159,7 +162,27 @@ var neweveLiLen = neweveLi.length; // li 길이
 
 eUl.css({width:(100*neweveLiLen) + '%', left:-100 + '%' }); // ul길이 설정
 neweveLi.css({width:(100/neweveLiLen) + '%'}); // li길이 설정
+// 헤더 글로벌 네비 기능
+gnB.on('mouseenter', function(e){
+  e.preventDefault();
 
+  hdB.css({height : '300px', opacity:'0.8'});
+})
+gnB.on('mouseleave', function(e){
+  e.preventDefault();
+
+  hdB.css({height : '100px', opacity:'1'});
+})
+gnB.find('a').on('focus', function(e){
+  e.preventDefault();
+
+  hdB.css({height : '300px', opacity:'0.8'});
+})
+gnB.find('a').on('blur', function(e){
+  e.preventDefault();
+
+  hdB.css({height : '100px', opacity:'1'});
+});
 // 버튼 이벤트 지정
 var permission = true; // 버튼 활성화 변수
 var n=0; // 버튼 클릭 수
@@ -215,12 +238,12 @@ viewBox.on('mouseenter', function(){
 // 마우스 벗어나면 다시 자동 애니메이션
 viewBox.on('mouseleave', function(){
   goslideFn();
-})
+});
 // 자동 애니메이션 실행
 goslideFn();
 
 // 인디케이터 클릭 이벤트
-indiA.on('click', function(e){
+indiA.on('click focus', function(e){
   e.preventDefault();
   var t = $(this).parent().index();
   eUl.stop().animate({marginLeft : (-100*t) + '%'});

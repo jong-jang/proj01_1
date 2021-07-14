@@ -1,8 +1,9 @@
-/*  c_tablet.css */
+/*  b_phone.css */
 
-@media screen and (min-width:768px) and (max-width:1279px) {
+@media screen and (max-width:767px) {
   #wrap {
     width:100%; height:auto;
+    min-width: 320px;
   }
   
   /* #headBox */
@@ -12,27 +13,29 @@
   #headBox > h1 {
     position: absolute;
     left:0; right:0; margin:auto;
+    width:168px; height:40px;
+    background-size: 90% auto;
   }
   #naviBox {
     width:100%; height:50px;
-    padding:0 2rem; box-sizing: border-box;
+    padding:0 1rem; box-sizing: border-box;
   }
   .globalnavi_box {
     float:left;
-    width:50px; height:50px;
+    width:50px; height:40px;
     background-image: url("../../img/menu.png");
     background-position: 50% 50%;
     background-repeat: no-repeat;
-    background-size: 90%;
+    background-size: 70%;
   }
   .globalnavi_box > li {display: none;}
   .usernavi_box {
     float:right;
-    width:50px; height:50px;
+    width:50px; height:40px;
     background-image: url("../../img/user.png");
     background-position: 50% 50%;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 80%;
   }
   .usernavi_box > li {
     display: none;
@@ -52,13 +55,20 @@
   .indicator_box > ul > li.act {
     width:5vw;
   }
+  .evbutton_box > button {
+    width:60px; height:60px;
+  }
   .evimage_box {height:49.0625vw;}
   .evimage_box > ul > li > a {
-    bottom:10%; left:10%;
+    width:70px; height:40px;
+    bottom:7%; left:10%;
   }
   /* #bestmenuBox */
+  #bestmenuBox {
+    margin-bottom:50px
+  }
   #bestmenuBox > .view_box {
-    width:300px; height:500px;
+    width:200px; height:300px;
     margin: auto;
     margin-top: 30px;
     overflow: hidden;
@@ -70,12 +80,43 @@
   #bestmenuBox ul li {
     width:calc(100% / 6); height:100%;
   }
+  #bestmenuBox li:first-of-type dt div {
+    width:50px; height:50px;
+  }
   /* #reviewBox */
-  .rr_box {width:100%;}
+  #reviewBox {
+    padding:5px; box-sizing: border-box;
+  }
+  .rr_box {
+    width:90%;
+    padding:5px;
+  }
   .rr_box li {
-    width:70vw; height: 11.71875vw;
-    margin-bottom: 80px;
+    width:90vw; height: 150px;
+    margin:auto;
+    margin-bottom: 30px;
+  }
+  .rr_box li:last-of-type{
+    margin-bottom: 100px;
+  }
+  .rr_box li dl {
+    width:100%; height:100%;
+  }
+  .rr_box li dt {
+    float:left;
+    width:30%; height:100%;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: 100%;
+  }
+  .rr_box li dd {
+    float:right;
+    width:69%; height:100%;
+    padding:20px; box-sizing: border-box;
+    border-radius: 20px;
+    background-color: #fff;
   }
   /* #footBox */
   .footnavi_box {display: none;}
+  .sns_box {display:none;}
 }
