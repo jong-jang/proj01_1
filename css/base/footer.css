@@ -1,0 +1,5 @@
+/*  footer.css */
+
+@import url("../footer/a_base.css");
+@import url("../footer/b_phone.css");
+@import url("../footer/c_tablet.css");

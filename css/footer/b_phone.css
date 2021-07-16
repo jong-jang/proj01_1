@@ -1,0 +1,6 @@
+/*  footer/b_phone.css */
+
+@media screen and (max-width:767px) {
+  .footnavi_box {display: none;}
+  .sns_box {display:none;}
+}

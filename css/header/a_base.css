@@ -1,0 +1,85 @@
+/*  header/a_base.css */
+
+/* #headBox */
+#headBox {
+  position: fixed;
+  top:0; right:0; left:0; z-index: 1500;
+  margin:auto;
+  width:100%; max-width:1600px; height:100px;
+  padding-top:28px; padding-bottom:43px; box-sizing: border-box;
+  background-color: #fff;
+}
+#headBox:before,
+#headBox::before {
+  content: "";
+  display: block;
+  position: fixed;
+  top:0; right:0; left:0; z-index: -1;
+  margin:auto;
+  width:100%; height:100px;
+  background-color:#fff;
+}
+#headBox > h1 {
+  float:left;
+  width:258px; height:50px;
+  margin-left:20px;
+  background-image: url("../../img/logo.png");
+  background-position: 0 0;
+  background-repeat: no-repeat;
+}
+#headBox > h1 > a {
+  display: block;
+  width:inherit; height: inherit;
+}
+.usernavi_box {
+  float:right;
+  width:auto; height:auto;
+  padding-top:15px; box-sizing: border-box;
+}
+.usernavi_box > ul {
+  width:300px; height:auto;
+}
+.usernavi_box > ul > li {
+  float:right;
+  position: relative;
+  width:25%; height:auto;
+  text-align: center;
+}
+.usernavi_box > ul > li:before,
+.usernavi_box > ul > li::before {
+  content: "";
+  display: block;
+  position: absolute; top:50%; transform: translateY(-50%);
+  width:0.5px; height:80%;
+  background-color: #171717;
+}
+.usernavi_box > ul > li:last-of-type:before,
+.usernavi_box > ul > li:last-of-type::before{
+  display: none;
+}
+.globalnavi_box {
+  width:auto; height:auto;
+  padding-top:15px;box-sizing:  border-box;
+  margin-left:10vw;
+}
+.main_content {
+  height:20px;
+}
+.main_content > li{
+  width:25%; height:auto;
+}
+.main_content > li > div {
+  width:auto; height:auto;
+  font-size: var(--font-size3);
+  font-weight: var(--font-weight3);
+}
+.sub_content {
+  display: none;
+  width:100%; height:150px;
+  padding-top:50px;
+  background-color: #fff;
+}
+.sub_content > li {
+  width:auto; height:auto;
+  margin-bottom:10px;
+}

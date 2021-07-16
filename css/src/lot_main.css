@@ -1,5 +1,7 @@
 /* lot_main.css */
 
+@import url("../base/header.css");
+@import url("../base/footer.css");
 @import url("../main/a_common.css");
 @import url("../main/b_phone.css");
 @import url("../main/c_tablet.css");

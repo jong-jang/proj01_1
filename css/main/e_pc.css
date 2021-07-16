@@ -7,24 +7,6 @@
   margin:auto;
 }
 /* #headBox */
-#naviBox {
-  width:70%; height:50px;
-  padding-top: 15px; box-sizing: border-box;
-}
-.globalnavi_box {
-  float:left;
-  width:60%; height:auto;
-}
-.globalnavi_box > li div {
-  margin-right:100px;
-}
-.usernavi_box {
-  float:right;
-  width:30%; height:auto;
-}
-.usernavi_box > li {
-  width:24%;
-}
 /* #sideBox */
 #sideBox {}
 /* #viewBox */
@@ -55,6 +37,9 @@
 }
 #bestmenuBox ul li:nth-of-type(3n) {
   margin-right: 0;
+}
+.bmbutton_box {
+  display: none;
 }
 /* #reviewBox */
 .rr_box {width:85%;}

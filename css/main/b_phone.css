@@ -7,39 +7,6 @@
   }
   
   /* #headBox */
-  #headBox {
-    position: relative;
-  }
-  #headBox > h1 {
-    position: absolute;
-    left:0; right:0; margin:auto;
-    width:168px; height:40px;
-    background-size: 90% auto;
-  }
-  #naviBox {
-    width:100%; height:50px;
-    padding:0 1rem; box-sizing: border-box;
-  }
-  .globalnavi_box {
-    float:left;
-    width:50px; height:40px;
-    background-image: url("../../img/menu.png");
-    background-position: 50% 50%;
-    background-repeat: no-repeat;
-    background-size: 70%;
-  }
-  .globalnavi_box > li {display: none;}
-  .usernavi_box {
-    float:right;
-    width:50px; height:40px;
-    background-image: url("../../img/user.png");
-    background-position: 50% 50%;
-    background-repeat: no-repeat;
-    background-size: 80%;
-  }
-  .usernavi_box > li {
-    display: none;
-  }
   /* #sideBox */
   #sideBox {display:none;}
   /* #viewBox */
@@ -56,24 +23,30 @@
     width:5vw;
   }
   .evbutton_box > button {
-    width:60px; height:60px;
+    width:40px; height:40px;
+  }
+  .evbutton_box > button > i {
+    font-size: 2rem;
   }
   .evimage_box {height:49.0625vw;}
   .evimage_box > ul > li > a {
-    width:70px; height:40px;
+    width:70px; height:30px;
     bottom:7%; left:10%;
+    font-size: 12px;
   }
   /* #bestmenuBox */
   #bestmenuBox {
+    position:relative;
     margin-bottom:50px
   }
   #bestmenuBox > .view_box {
-    width:200px; height:300px;
+    width:250px; height:400px;
     margin: auto;
     margin-top: 30px;
     overflow: hidden;
   }
   #bestmenuBox ul {
+    position:relative;
     width:600%; height:100%;
     margin:auto;
   }
@@ -82,6 +55,37 @@
   }
   #bestmenuBox li:first-of-type dt div {
     width:50px; height:50px;
+  }
+  #bestmenuBox ul li dt a{
+    display: block;
+    width:100%; height:100%;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: 80%;
+  }
+  .bmbutton_box {
+    position:absolute;
+    z-index: 1;
+    width:100%; height:auto;
+    top:50%; transform: translateY(-50%);
+    padding:0 1.3rem; box-sizing: border-box;
+    opacity:0.9;
+  }
+  .bmbutton_box button i {
+    font-size:2rem;
+    color:#777;
+  }
+  .bmbutton_box .next_btn {
+    float:right;
+    width:40px; height:40px;
+    border:1px solid #777;
+    border-radius: 100%;
+  }
+  .bmbutton_box .prev_btn {
+    float:left;
+    width:40px; height:40px;
+    border:1px solid #777;
+    border-radius: 100%;
   }
   /* #reviewBox */
   #reviewBox {
@@ -117,6 +121,5 @@
     background-color: #fff;
   }
   /* #footBox */
-  .footnavi_box {display: none;}
-  .sns_box {display:none;}
+
 }

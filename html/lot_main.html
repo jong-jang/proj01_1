@@ -4,8 +4,14 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- fontawesome5 -->
+  <!--[if IE]>
+    <script src="../ie/html5shiv/dist/html5shiv.min.js"></script>
+    <script src="../ie/ie9js/ie9.min.js"></script>
+    <script src="../ie/csspie/PIE.js"></script>
+    <script src="../ie/responsive.min.js"></script>
+  <![endif]-->
 
+  <!-- fontawesome5 -->
   <link rel="stylesheet" href="../fonts/fontawesome5/css/all.min.css">
   
   <link rel="shortcut icon" href="../favicon.png" type="image/png">
@@ -22,51 +28,6 @@
   <!-- layout -->
   <div id="wrap">
     <header id="headBox">
-      <h1><a href="./lot_main.html"><span class="blind">롯데리아</span></a></h1>
-      <nav id="naviBox">
-        <h2 class="blind">네비게이션</h2>
-        <ul class="usernavi_box">
-          <h3 class="blind">사용자 네비게이션</h3>
-          <li><a href="#">한국어</a></li>
-          <li><a href="#">회원가입</a></li>
-          <li><a href="#">로그인</a></li>
-          <li><button type="button"><i class="fas fa-search"></i></button></li>
-        </ul>
-        <ul class="globalnavi_box">
-          <h3 class="blind">메뉴 네비게이션</h3>
-          <li>
-            <div><a href="#">메뉴</a></div>
-            <ul>
-              <li><a href="#">버거</a></li>
-              <li><a href="#">치킨</a></li>
-              <li><a href="#">음료</a></li>
-              <li><a href="#">디저트</a></li>
-            </ul>
-          </li>
-          <li>
-            <div><a href="#">매장</a></div>
-            <ul>
-              <li><a href="#">매장 찾기</a></li>
-              <li><a href="#">드라이브스루</a></li>
-              <li><a href="#">딜리버리</a></li>
-            </ul>
-          </li>
-          <li>
-            <div><a href="#">이벤트</a></div>
-            <ul>
-              <li><a href="#">진행중인 이벤트</a></li>
-              <li><a href="#">당첨자 발표</a></li>
-            </ul>
-          </li>
-          <li>
-            <div><a href="#">브랜드 소개</a></div>
-            <ul>
-              <li><a href="#">바른 먹거리</a></li>
-              <li><a href="#">고객의 소리</a></li>
-            </ul>
-          </li>
-        </ul>
-      </nav>
     </header>
   <!-- // #headBox -->
     <aside id="sideBox">
@@ -93,6 +54,16 @@
   <!-- // #viewBox -->
     <article id="bestmenuBox">
       <h2><a href="#">추천 메뉴</a></h2>
+      <div class="bmbutton_box">
+        <button class="next_btn" type="button">
+          <span class="blind">다음</span>
+          <i class="fas fa-chevron-right"></i>
+        </button>
+        <button class="prev_btn" type="button">
+          <span class="blind">이전</span>
+          <i class="fas fa-chevron-left"></i>
+        </button>
+      </div>
       <div class="view_box">
         <ul class="bm_box clearfix"></ul>
       </div>
@@ -105,36 +76,7 @@
     </article>
   <!-- // #reviewBox -->
     <footer id="footBox">
-      <h2 class="blind">회사 소개, 정보</h2>
-      <div class="info_box">
-        <h3 class="blind">소개 및 방침</h3>
-        <ul class="footnavi_box">
-          <li><a href="#">회사소개</a></li>
-          <li><a href="#">이용약관</a></li>
-          <li><a href="#">개인정보처리방침</a></li>
-          <li><a href="#">가맹점문의</a></li>
-          <li><a href="#">홍보센터</a></li>
-          <li><a href="#">영상정보 처리기기 운영 및 관리 방침</a></li>
-        </ul>
-        <address>
-          <p>서울특별시 용산구 한강대로71길 47 전화주문:1600-9999 <br />
-            사업자번호:106-81-23498 대표자:차우철
-          </p>
-          <p>Copyright &copy; 2013 LOTTELIA CO.,LTD All Rights Reserved.</p>
-        </address>
-      </div>
-      <div class="sns_box">
-        <h3>SNS</h3>
-        <div class="sns_01 sns_img">
-          <h4><a href="#"><span class="blind">facebook</span></a></h4>
-        </div>
-        <div class="sns_02 sns_img">
-          <h4><a href="#"><span class="blind">kakao</span></a></h4>
-        </div>
-        <div class="sns_03 sns_img">
-          <h4><a href="#"><span class="blind">youtube</span></a></h4>
-        </div>
-      </div>
+
     </footer>
   <!-- // #footBox -->
 
@@ -144,6 +86,9 @@
   <!-- script -->
   <script src="../js/jquery/jquery-3.6.0.min.js"></script>
   <script src="../js/jquery/jquery-ui.min.js"></script>
+  <script src="../js/jquery/device_temp.js"></script>
   <script src="../js/src/lot_main.js"></script>
+  <script src="../js/src/common.js"></script>
+  
 </body>
 </html>

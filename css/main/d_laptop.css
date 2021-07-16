@@ -3,19 +3,7 @@
 @media screen and (min-width:1280px) and (max-width:1599px) {
 
 /* #headBox */
-#naviBox {
-  width:70%; height:50px;
-  padding-top: 15px; box-sizing: border-box;
-}
-.globalnavi_box {
-  float:left;
-  width:60%; height:auto;
-  
-}
-.usernavi_box {
-  float:right;
-  width:40%; height:auto;
-}
+
 /* #sideBox */
 #sideBox {}
 
@@ -50,7 +38,9 @@
 #bestmenuBox ul li:nth-of-type(2n) {
   margin-right: 0;
 }
-
+.bmbutton_box {
+  display: none;
+}
 /* #reviewBox */
 
 .rr_box {width:100%;}
@@ -65,5 +55,4 @@
 }
 
 /* #footBox */
-#footBox {}
 }

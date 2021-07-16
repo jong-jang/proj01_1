@@ -1,0 +1,16 @@
+/*  header/e_pc.css */
+
+@media screen and (min-width:1600px) {
+  .gnb_btn{display:none;}
+.unb_btn{display:none;}
+.globalnavi_box {
+  float:left;
+  margin-left:200px
+}
+.globalnavi_box > ul {
+  width:800px;
+}
+.globalnavi_box > ul > li{
+  float:left;
+}
+}
