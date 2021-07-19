@@ -26,15 +26,6 @@
   background-color:var(--color-y);
 }
 
-.evimage_box > ul > li > a {
-  position:absolute;
-  display: block;
-  background-color: var(--color-y);
-  font-size: var(--font-size3);
-  text-align: center;
-  opacity: 0.5;
-  line-height: 2.7;
-}
 .indicator_box > ul {
   width:auto; height:auto;
 }
@@ -92,7 +83,14 @@
   background-size: auto 100%;
 }
 .evimage_box > ul > li > a {
+  position:absolute;
   width:200px; height:50px;
+  display: block;
+  background-color: var(--color-y);
+  font-size: var(--font-size3);
+  text-align: center;
+  opacity: 0.5;
+  line-height: 2.7;
 }
 /* #bestmenuBox */
 #bestmenuBox {

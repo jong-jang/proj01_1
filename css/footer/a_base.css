@@ -1,5 +1,7 @@
 /*  footer/a_base.css */
-
+body,html {
+  font-family:'Malgun Godhic';
+}
 #footBox {
   width:100%; height:150px;
   padding:20px; box-sizing: border-box;

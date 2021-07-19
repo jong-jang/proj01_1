@@ -2,3 +2,8 @@
 
 @import url("../base/header.css");
 @import url("../base/footer.css");
+/* @import url("../sub_menu/a_common.css"); */
+/* @import url("../sub_menu/b_phone.css"); */
+/* @import url("../sub_menu/c_tablet.css"); */
+/* @import url("../sub_menu/d_laptop.css"); */
+@import url("../sub_menu/e_pc.css");

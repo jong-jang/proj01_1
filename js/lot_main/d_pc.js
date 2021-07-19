@@ -4,9 +4,9 @@
 // jQuery
 var myData = [];
 var dataLink = [
-    '../data/bestmenuData.json', // 추천 메뉴 데이터
-    '../data/evimgData.json',    // 이벤트 이미지 데이터
-    '../data/reviewData.json'    // 리뷰 데이터
+    '../../data/bestmenuData.json', // 추천 메뉴 데이터
+    '../../data/evimgData.json',    // 이벤트 이미지 데이터
+    '../../data/reviewData.json'    // 리뷰 데이터
 ];
 for(var i=0; i<dataLink.length; i+=1){
   $.ajax({

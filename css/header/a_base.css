@@ -1,5 +1,7 @@
 /*  header/a_base.css */
-
+body,html {
+  font-family:'Malgun Godhic';
+}
 /* #headBox */
 #headBox {
   position: fixed;

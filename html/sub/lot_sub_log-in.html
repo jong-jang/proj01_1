@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<!-- html/lot_sub_log-in.html -->
+<html lang="ko-KR">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <meta name="description" content="웹표준, 웹기초 공부, html을 익혀보자">
+  <meta name="keyword" content="웹표준, web, html, css , js, basic">
+  <meta name="author" content="jajo"> -->
+
+  <!--[if IE]>
+    <script src="../ie/html5shiv/dist/html5shiv.min.js"></script>
+    <script src="../ie/ie9js/ie9.min.js"></script>
+    <script src="../ie/csspie/PIE.js"></script>
+    <script src="../ie/responsive.min.js"></script>
+  <![endif]-->
+  <!-- fontawesome5 -->
+  <link rel="stylesheet" href="../../fonts/fontawesome5/css/all.min.css">
+
+  <link rel="shortcut icon" href="../../favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="../../favicon.png">
+  
+  <link rel="stylesheet" href="../../css/base/reset.css">
+  <link rel="stylesheet" href="../../css/base/common.css">
+  <link rel="stylesheet" href="../../css/base/root.css">
+  <link rel="stylesheet" href="../../css/src/lot_sub_log-in.css">
+
+  <title>웹 기초</title>
+
+</head>
+<body>
+  <!-- layout -->
+    <div id="wrap">
+      <header id="headBox">
+
+      </header>
+      <!-- // #headBox -->
+      <section id="directoryBox">
+        <div>
+          <p>로그인</p>
+          <p>HOME > 로그인</p>
+        </div>
+      </section>
+      <!-- #directoryBox -->
+      <article id="log-inBox">
+        <h2 class="blind">로그인</h2>
+        <div class="log_container">
+          <div class="text_box">
+            <p>WHERE TASTE IS GOOD</p>
+            <p>어서오세요! 롯데리아입니다.</p>
+          </div>
+  
+          <div class="log-in_wrap clearfix">
+            <form action="#" method="POST">
+              <fieldset class="log-in">
+                <h3>일반 로그인</h3>
+                <legend><span class="blind"></span>로그인</legend>
+                <div class="log-in_cont">
+                  <div class="input_idpw">
+                    <label for="userId"><span class="blind">ID</span></label>
+                    <input type="text" name="userId" id="userId" value="" placeholder="아이디 (이메일)"/>
+                  </div>
+                  <div class="input_idpw">
+                    <label for="userPw"><span class="blind">비밀번호</span></label>
+                    <input type="password" name="userPw" id="userPw" value="" placeholder="비밀번호"/>
+                  </div>
+                  <div class="log-in_option">
+                    <input type="checkbox">
+                    <label for="userId">아이디 저장</label>
+                    <input type="checkbox">
+                    <label for="userPw">비밀번호 저장</label>
+                  </div>
+                  <div class="btn_a">
+                    <div><button type="submit">로그인</button></div>
+                    <div><a href="#">회원가입</a></div>
+                  </div>
+                  <div class="search_idpw">
+                    <div><a href="#">아이디 찾기</a></div>
+                    <div><a href="#">비밀번호 찾기</a></div>
+                  </div>
+                </div>
+              </fieldset>
+              <div class="simple_log-in">
+                <h3>간편 로그인</h3>
+                <ul class="simple_list">
+                  <li><a href="#"><span>네이버 로그인</span></a></li>
+                  <li><a href="#"><span>카카오 로그인</span></a></li>
+                  <li><a href="#"><span>페이스북 로그인</span></a></li>
+                </ul>
+              </div>
+            </form>
+          </div>
+        </div>
+      </article>
+      <!-- #log-inBox -->
+      <article id="nonMember">
+        <h2>비회원 주문</h2>
+        <div class="input_box">
+          <form action="#" method="POST">
+            <fieldset>
+              <legend><span class="blind">비회원 주문</span></legend>
+              <div class="nm_container">
+                <div class="nm_input">
+                  <label for="nmName">
+                    <span class="blind">name</span>
+                    <i class="fas fa-user"></i>
+                  </label>
+                  <input type="text" id="nmName" name="nmName" value="" placeholder="이름" />
+                </div>
+                <div class="nm_input">
+                  <label for="nmTel">
+                    <span class="blind">tel</span>
+                    <i class="fas fa-phone-alt"></i>
+                  </label>
+                  <input type="tel" id="nmTel" name="nmTel" value="" placeholder="전화번호">
+                </div>
+                <div class="nm_input">
+                  <label for="nmAddress">
+                    <span class="blind">adress</span>
+                    <i class="fas fa-map-marker-alt"></i>
+                  </label>
+                  <input type="text" id="nmAddress" name="nmAddress" value="" placeholder="주소">
+                </div>
+                <div><button type="button"><span>주소 찾기</span></button></div>
+              </div>
+            </fieldset>
+            <div class="nonM_btn">
+              <button type="submit">주문하기</button>
+            </div>
+          </form>
+        </div>
+      </article>
+      <footer id="footBox">
+        
+      </footer>
+      <!-- // #footBox -->
+    </div>
+  <!-- script -->
+  <script src="../../js/jquery/jquery-3.6.0.min.js"></script>
+  <script src="../../js/jquery/jquery-ui.min.js"></script>
+  <script src="../../js/jquery/device_temp.js"></script>
+  <script src="../../js/src/lot_sub_log-in.js"></script>
+  <script src="../../js/src/common.js"></script>
+  
+</body>
+</html>
