@@ -10,6 +10,9 @@
   /* #sideBox */
   #sideBox {display:none;}
   /* #viewBox */
+  #viewBox {
+    margin-bottom: 150px;
+  }
   .indicator_box {
     bottom:5%;
     padding:1vw;
@@ -37,7 +40,7 @@
   /* #bestmenuBox */
   #bestmenuBox {
     position:relative;
-    margin-bottom:50px
+    margin-bottom:200px;
   }
   #bestmenuBox > .view_box {
     width:250px; height:400px;
@@ -52,7 +55,7 @@
   }
   #bestmenuBox ul li {
     width:calc(100% / 6); height:100%;
-    box-shadow: 0;
+    box-shadow: none;
   }
   #bestmenuBox li:first-of-type dt div {
     width:50px; height:50px;
@@ -90,14 +93,14 @@
   }
   /* #reviewBox */
   #reviewBox {
-    padding:5px; box-sizing: border-box;
+    padding-top:50px; box-sizing: border-box;
   }
   .rr_box {
     width:90%;
     padding:5px;
   }
   .rr_box li {
-    width:90vw; height: 150px;
+    width:80vw; height: 150px;
     margin:auto;
     margin-bottom: 30px;
   }

@@ -96,7 +96,7 @@
 }
 .btn_a div{
   float:left;
-  width:120px; height:50px;
+  width:120px; height:40px;
   border: 0.5px solid #333;
 }
 .btn_a div:first-of-type {
@@ -111,7 +111,7 @@
 .btn_a div a {
   display: block;
   width:100%; height:100%;
-  text-align: center; line-height: 3;
+  text-align: center; line-height: 2.5;
   background-color:var(--color-g5);
   color:#fff;
 }
@@ -202,12 +202,12 @@
   padding:30px 10px; box-sizing: border-box;
 }
 #nonMember h2 {
-  margin-left:500px;
+  text-align: center;
   margin-bottom:30px;
   font-size: var(--font-size4);
 }
 .input_box fieldset {
-  width:50%; height:auto;
+  width:30%; height:auto;
   margin:auto;
   background-color: #fff;
 }

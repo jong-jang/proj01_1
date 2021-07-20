@@ -1,0 +1,9 @@
+/*  lot_sub_event.css */
+
+@import url("../base/header.css");
+@import url("../base/footer.css");
+/* @import url("../sub_event/a_common.css"); */
+/* @import url("../sub_event/b_phone.css"); */
+/* @import url("../sub_event/c_tablet.css"); */
+/* @import url("../sub_event/d_laptop.css"); */
+@import url("../sub_event/e_pc.css");

@@ -51,7 +51,7 @@ var evimLiFn = function(setData){
 }
 // 추천 메뉴 li 요소 생성
 var bmLiFn = function(setData){
-  var bmLi = '<li><dl><dt><a><span class="blind">메뉴 이름<span></a><div></div></dt><dd><p></p><p></p><p></p></dd></dl></li>';
+  var bmLi = '<li><div></div><dl><dt><a><span class="blind">메뉴 이름<span></a><div></div></dt><dd><p></p><p></p><p></p></dd></dl></li>';
   bmUl.append(bmLi);
 
   bmUl.children('li').eq(-1).find('dt').find('a').css({backgroundImage : 'url(' + setData.bestmenuI +')'});
@@ -59,6 +59,7 @@ var bmLiFn = function(setData){
   bmUl.children('li').eq(-1).find('p').eq(0).text(setData.name);
   bmUl.children('li').eq(-1).find('p').eq(1).text(setData.price);
   bmUl.children('li').eq(-1).find('p').eq(2).text(setData.kcal);
+  bmUl.children('li').eq(-1).children('div').text(setData.info);
 };
 // 리뷰 li 요소 생성
 var rvLiFn = function(setData){
@@ -79,6 +80,7 @@ function BmCard(data){
   this.name = data.name;
   this.price = data.price;
   this.kcal = data.kcal;
+  this.info = data.info;
 }
 // 이벤트 생성자
 function EvimgCard(data){
@@ -142,6 +144,22 @@ var indiA = indiLi.children('a'); // li a
 var evbtn = $('.evbutton_box'); // 버튼 박스
 var evNextbtn = evbtn.children('.next_btn'); // 다음 버튼
 var evPrevbtn = evbtn.children('.prev_btn'); // 이전 버튼
+
+var bmLi = bmUl.children('li'); // 추천메뉴 li
+var bmA = bmLi.find('a'); // li에 a
+var bmD = bmLi.children('div'); // li에 div
+// 메뉴 클릭시 메뉴 재료 정보
+bmA.on('click', function(e){ 
+  e.preventDefault();
+
+  var _this = $(this).parents('li').index();
+  bmLi.eq(_this-1).children('div').addClass('act');
+});
+// 다시 클릭시 사라짐
+bmD.on('click', function(){
+  $(this).removeClass('act');
+});
+
 // 인디케이터 반응 함수
 var indiFn = function(n){
   var indi = indiLi.eq(n);
