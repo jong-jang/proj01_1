@@ -2,50 +2,11 @@
 
 (function($){
 // jQuery
-var menuData = [
-  {
-    "link" : "http://naver.com",
-    "bestmenuI" : "../../img/1.png",
-    "name" : "핫크리스피 버거",
-    "price" : "4,900원",
-    "kcal" : "503kcal"
-  },
-  {
-    "link" : "http://naver.com",
-    "bestmenuI" : "../../img/2.png",
-    "name" : "불고기 버거",
-    "price" : "3,900원",
-    "kcal" : "442kcal"
-  },
-  {
-    "link" : "http://naver.com",
-    "bestmenuI" : "../../img/3.png",
-    "name" : "폴더버거 비프",
-    "price" : "5,800원",
-    "kcal" : "509kcal"
-  },
-  {
-    "link" : "http://naver.com",
-    "bestmenuI" : "../../img/4.png",
-    "name" : "모짜렐라 인 더 버거",
-    "price" : "6,200원",
-    "kcal" : "715kcal"
-  },
-  {
-    "link" : "http://naver.com",
-    "bestmenuI" : "../../img/3.png",
-    "name" : "폴더버거 비프",
-    "price" : "5,800원",
-    "kcal" : "509kcal"
-  },
-  {
-    "link" : "http://naver.com",
-    "bestmenuI" : "../../img/6.png",
-    "name" : "치즈 No.5",
-    "price" : "4,900원",
-    "kcal" : "509kcal"
-  }
-]
+$.ajax({
+  url:'../../data/bestmenuData.json',
+  context:document.body
+}).done(function(data){
+  var myData = data;
 
 var mnUl = $('.menu_box');
 
@@ -72,11 +33,11 @@ function MnCard(data){
 // 메뉴 생성
 var i = 0;
 var mnsetCard;
-var mnLen = menuData.length;
+var myDataLen = myData.length;
 
-for(; i < mnLen; i++){
-  mnsetCard = new MnCard(menuData[i]);
+for(; i < myDataLen; i++){
+  mnsetCard = new MnCard(myData[i]);
   mnLiFn(mnsetCard)
 }
-
+});
 })(jQuery);

@@ -27,6 +27,7 @@
   line-height: 1.5;
 }
 .text_box h2 {
+  text-shadow: 2px 2px 2px #333;
   font-size: var(--font-size4);
   font-weight: var(--font-weight3);
   margin-bottom: 30px;

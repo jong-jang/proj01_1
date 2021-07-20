@@ -36,6 +36,7 @@
     <!-- // #headBox -->
     <section id="directoryBox">
       <div class="view_container">
+        <h2 class="blind">현재 경로</h2>
         <p>매장</p>
         <p>HOME > 매장</p>
       </div>
@@ -43,9 +44,16 @@
     <!-- // #directoryBox -->
     <article id="contentBox">
       <div class="ct_container">
-        <div id="map">
-          
+        <h2>매장찾기</h2>
+        <ul class="store_list clearfix">
+          <li><a href="#">매장찾기</a></li>
+          <li><a href="#">드라이브 쓰루</a></li>
+          <li><a href="#">딜리버리</a></li>
+        </ul>
+        <div class="coment">
+          <p>가까운 매장을 찾아보세요!</p>
         </div>
+        <div id="map"></div>
       </div>
     </article>
     <footer id="footBox">
@@ -54,7 +62,7 @@
     <!-- // #footBox -->
   </div>
   <!-- script -->
-  <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=acac513ddde2cd842e0566522d6866fb"></script>
+  <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=43733cba949b30b7ac84d4162a084b7f&libraries=services,clusterer,drawing"></script>
   <script src="../../js/jquery/jquery-3.6.0.min.js"></script>
   <script src="../../js/jquery/jquery-ui.min.js"></script>
   <script src="../../js/jquery/device_temp.js"></script>
