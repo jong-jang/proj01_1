@@ -92,6 +92,28 @@
   padding-top: 10px; box-sizing: border-box;
   border-bottom:1px solid #777;
 }
+.log-in_option {
+  width:300px; height:auto;
+}
+.log-in_option div {
+  float:left;
+}
+.save_id {
+  width:auto; height:40px;
+  margin-right:10px;
+}
+.save_pw {
+  width:auto; height:40px;
+}
+#checkId,
+#checkPw {width: 0; height: 0; overflow: hidden;}
+#checkId + label,
+#checkPw + label {cursor: pointer;}
+#checkId + label > i,
+#checkPw + label > i{ color:rgba(0,0,0,0.2);}
+#checkId:checked + label > i,
+#checkPw:checked + label > i { color:rgba(255,0,0,1);}
+
 .btn_a {
   width:300px; height:50px;
 }

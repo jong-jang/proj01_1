@@ -42,6 +42,9 @@
   width:200px; height:50px;
   margin-right:30px;
 }
+.ev_content li.act {
+  border-bottom: 2px solid var(--color-y);
+}
 .ev_content li a {
   display: block;
   width:100%; height:100%;
@@ -51,6 +54,7 @@
   font-weight: 600;
 }
 .ev_list {
+  /* display: none; */
   width:1146px; height:auto;
   margin:auto;
 }
@@ -61,4 +65,55 @@
   margin-bottom: 80px;
   border-radius: 20px;
   border:1px solid #777;
+}
+.ev_list li dl {
+  width:100%; height:100%;
+  padding:0;
+  margin:0;
+}
+.ev_list li dt {
+  width:100%; height:70%;
+  border-radius: 20px 20px 0 0;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: auto 100% ;
+}
+.ev_list li dd {
+  width:100%; height:29%;
+  padding:20px; box-sizing: border-box;
+  font-weight: 700;
+}
+.announce_winner {
+  display:none;
+  width:500px; height:250px;
+  margin:auto;
+  border:1px solid #333;
+}
+.search_area p {
+  margin-top:20px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-size: 1.7rem;
+  font-weight: 600;
+}
+.input_use {
+  width:200px; height:30px;
+  margin:auto;
+  margin-bottom: 10px;
+  padding:5px; box-sizing: border-box;
+  border:1px solid #333;
+}
+.input_use input {
+
+}
+.sub_btn {
+  width:100px; height:30px;
+  margin:auto;
+  margin-top:2rem;
+}
+.sub_btn button {
+  width:100%; height:100%;
+  background-color: #555;
+  color:#fff;
+  text-align: center;
 }

@@ -66,12 +66,25 @@
                     <label for="userPw"><span class="blind">비밀번호</span></label>
                     <input type="password" name="userPw" id="userPw" value="" placeholder="비밀번호"/>
                   </div>
-                  <div class="log-in_option">
-                    <input type="checkbox">
-                    <label for="userId">아이디 저장</label>
-                    <input type="checkbox">
-                    <label for="userPw">비밀번호 저장</label>
+
+                  <div class="log-in_option clearfix">
+                    <div class="save_id">
+                      <input type="checkbox" name="checkId" id="checkId" value="" />
+                      <label for="checkId">
+                        <i class="fas fa-check-square"></i>
+                        아이디 저장
+                      </label>
+                    </div>
+                    
+                    <div class="save_pw">
+                      <input type="checkbox" name="checkPw" id="checkPw" value="" />
+                      <label for="checkPw">
+                        <i class="fas fa-check-square"></i>
+                        비밀번호 저장
+                      </label>
+                    </div>
                   </div>
+
                   <div class="btn_a">
                     <div><button type="submit">로그인</button></div>
                     <div><a href="#">회원가입</a></div>
