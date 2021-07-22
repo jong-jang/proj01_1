@@ -1,0 +1,9 @@
+/*  lot_sub_brand.css */
+
+@import url("../base/header.css");
+@import url("../base/footer.css");
+/* @import url("../sub_brand/a_common.css"); */
+/* @import url("../sub_brand/b_phone.css"); */
+/* @import url("../sub_brand/c_tablet.css"); */
+/* @import url("../sub_brand/d_laptop.css"); */
+@import url("../sub_brand/e_pc.css");
