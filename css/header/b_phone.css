@@ -47,6 +47,24 @@
   }
   .user_content {
     display:none;
+    position:fixed;
+    top:100px; right:0; z-index: 15;
+    width:78.125vw; height:auto;
+    padding:20px; box-sizing: border-box;
+    font-size: 1rem;
+    font-weight: var(--font-weight3);
+    background-color: #fff;
+  }
+  .usernavi_box > ul > li {
+    width:100%; height:30px;
+    text-align: center;
+    line-height: 2;
+    margin-bottom:40px;
+    background-color: #ddd;
+  }
+  .usernavi_box > ul > li:before,
+  .usernavi_box > ul > li::before {
+    display: none;
   }
   .main_content {
     display: none;
