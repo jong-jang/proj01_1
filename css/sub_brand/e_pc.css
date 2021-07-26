@@ -77,7 +77,7 @@
   float:left;
 }
 .indi_box {
-  position:absolute;
+  position:absolute; z-index:1;
   bottom:10px; left:50%; transform: translateX(-50%);
   width:auto; height:20px;
 }
