@@ -1,0 +1,34 @@
+[
+  {
+    "menuI" : "../../img/1.png",
+    "menuname" : "핫크리스피 버거",
+    "userid" : "jjh0299",
+    "username" : "장**",
+    "review" : "맛있어요",
+    "star" : "../../img/star.png"
+  },
+  {
+    "menuI" : "../../img/2.png",
+    "menuname" : "불고기 버거",
+    "userid" : "ons1234",
+    "username" : "온**",
+    "review" : "맛없어요",
+    "star" : "../../img/star.png"
+  },
+  {
+    "menuI" : "../../img/3.png",
+    "menuname" : "폴더비프 버거",
+    "userid" : "jjh0299",
+    "username" : "장**",
+    "review" : "맛있어요",
+    "star" : "../../img/star.png"
+  },
+  {
+    "menuI" : "../../img/4.png",
+    "menuname" : "모짜렐라 인 더 버거",
+    "userid" : "ons1234",
+    "username" : "온**",
+    "review" : "맛없어요",
+    "star" : "../../img/star.png"
+  }
+]

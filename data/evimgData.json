@@ -1,0 +1,32 @@
+[
+  {
+    "link" : "../sub/lot_sub_event.html",
+    "backi" : "../../img/event1.jpg",
+    "name" : "evimg_01",
+    "info" : "치즈 no.5 출시"
+  },
+  {
+    "link" : "../sub/lot_sub_event.html",
+    "backi" : "../../img/event2.jpg",
+    "name" : "evimg_02",
+    "info" : "핫크리스피버거 더블 이벤트"
+  },
+  {
+    "link" : "../sub/lot_sub_event.html",
+    "backi" : "../../img/event3.jpg",
+    "name" : "evimg_03",
+    "info" : "치즈 no.5 출시"
+  },
+  {
+    "link" : "../sub/lot_sub_event.html",
+    "backi" : "../../img/event4.jpg",
+    "name" : "evimg_04",
+    "info" : "치즈 no.5 출시"
+  },
+  {
+    "link" : "../sub/lot_sub_event.html",
+    "backi" : "../../img/event5.jpg",
+    "name" : "evimg_05",
+    "info" : "그리운 맛, 수제버거 출시"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "link" : "http://naver.com",
+    "bestmenuI" : "../../img/1.png",
+    "name" : "핫크리스피 버거",
+    "price" : "4,900원",
+    "kcal" : "503kcal",
+    "info" : "양상추, 양파, 치킨패티, 마요네즈, 치즈, 토마토, 케찹, 참깨빵"
+  },
+  {
+    "link" : "http://naver.com",
+    "bestmenuI" : "../../img/2.png",
+    "name" : "불고기 버거",
+    "price" : "3,900원",
+    "kcal" : "442kcal",
+    "info" : "양상추, 양파, 불고기 패티, 불고기 소스, 마요네즈, 참깨빵"
+  },
+  {
+    "link" : "http://naver.com",
+    "bestmenuI" : "../../img/3.png",
+    "name" : "폴더버거 비프",
+    "price" : "5,800원",
+    "kcal" : "509kcal",
+    "info" : "파, 양파, 비프, 마요네즈, 모짜렐라 치즈, 체다 치즈, 치즈소스, 폴더빵"
+  },
+  {
+    "link" : "http://naver.com",
+    "bestmenuI" : "../../img/4.png",
+    "name" : "모짜렐라 인 더 버거",
+    "price" : "6,200원",
+    "kcal" : "715kcal",
+    "info" : "양상추, 양파, 불고기 패티, 베이컨 ,모짜렐라 치즈, 참깨빵"
+  },
+  {
+    "link" : "http://naver.com",
+    "bestmenuI" : "../../img/5.png",
+    "name" : "1인 혼닭",
+    "price" : "10,000원",
+    "kcal" : "581kcal",
+    "info" : "통닭 1마리, 카놀라유"
+  },
+  {
+    "link" : "http://naver.com",
+    "bestmenuI" : "../../img/6.png",
+    "name" : "치즈 No.5",
+    "price" : "4,900원",
+    "kcal" : "509kcal",
+    "info" : "양상추, 양파, 치즈패티, 치즈 소스, 체다 치즈, 피클, 불고기 소스, 참깨빵"
+  }
+]
