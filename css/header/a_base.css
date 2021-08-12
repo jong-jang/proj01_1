@@ -52,7 +52,7 @@ body,html {
   content: "";
   display: block;
   position: absolute; top:50%; transform: translateY(-50%);
-  width:0.5px; height:80%;
+  width:1px; height:80%;
   background-color: #171717;
 }
 .usernavi_box > ul > li:last-of-type:before,
