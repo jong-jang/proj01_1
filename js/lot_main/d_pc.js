@@ -251,5 +251,5 @@ indiA.on('click focus', function(e){
   n = t;
 });
 
-}, 300);
+}, 800);
 })(jQuery);
