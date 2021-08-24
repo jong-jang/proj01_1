@@ -18,8 +18,6 @@ for(var i=0; i<dataLink.length; i+=1){
   }); // ajax
 }
 
-setTimeout(1000);
-
 setTimeout(function(){
 
 // 변수
@@ -253,5 +251,5 @@ indiA.on('click focus', function(e){
   n = t;
 });
 
-}, 300);
+}, 1000);
 })(jQuery);
