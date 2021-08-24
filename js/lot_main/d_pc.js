@@ -18,7 +18,8 @@ for(var i=0; i<dataLink.length; i+=1){
   }); // ajax
 }
 
-setTimeout(500);
+setTimeout(1000);
+
 setTimeout(function(){
 
 // 변수
